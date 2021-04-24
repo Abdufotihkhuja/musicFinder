@@ -51,7 +51,14 @@ async function getMusic(artist){
         li.appendChild(shortAudio)
     }
 }
-
+document.addEventListener('play',(event)=>{
+    let audios = document.querySelectorAll("#music--audio")
+    for(let audio of audios){
+        if(audio != event.target){
+            audio.pause()
+        }
+    }
+},true)
 search.onkeyup = (event)=>{
     if(event.keyCode == 13){
         ul.innerHTML = null
