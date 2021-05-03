@@ -8,6 +8,7 @@ async function getMusic(artist){
         }
     })
     let musicData = await response.json()
+    console.log(musicData)
     for(let element of musicData.data){
         let artistName = element.artist.name
         let musicName = element.title
